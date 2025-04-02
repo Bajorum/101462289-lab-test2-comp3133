@@ -1,0 +1,35 @@
+<div class="filter-section">
+  <h2>Mission List</h2>
+
+  <div class="filter-row">
+    <label for="launchYear">Filter by Launch Year:</label>
+    <input type="text" id="launchYear" [(ngModel)]="selectedYear">
+    <button class="filter-button" (click)="filterByYear()">Filter</button>
+  </div>
+
+  <div class="filter-row">
+    <label>Launch</label>
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="launchStatus" [(ngModel)]="launchStatus" value="successful" (change)="emitFilters()"> Successful
+      </label>
+      <label>
+        <input type="radio" name="launchStatus" [(ngModel)]="launchStatus" value="failed" (change)="emitFilters()"> Failed
+      </label>
+    </div>
+  </div>
+
+  <div class="filter-row">
+    <label>Landing</label>
+    <div class="radio-group">
+      <label>
+        <input type="radio" name="landingStatus" [(ngModel)]="landingStatus" value="successful" (change)="emitFilters()"> Successful
+      </label>
+      <label>
+        <input type="radio" name="landingStatus" [(ngModel)]="landingStatus" value="failed" (change)="emitFilters()"> Failed
+      </label>
+    </div>
+  </div>
+
+  <button class="reset-button" (click)="resetFilters()">Reset Filters</button>
+</div>

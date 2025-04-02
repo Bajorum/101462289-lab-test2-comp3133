@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1, h2 {
+    color: #000000;
+  }
+  
+  .container {
+    width: 90%;
+    margin: auto;
+    padding-top: 20px;
+  }
+  
+  .filter-container {
+    margin-bottom: 15px;
+  }
+  
+  .filter-container input[type="text"] {
+    padding: 4px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .filter-container button {
+    padding: 6px 14px;
+    background-color: #555555;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .filter-container button:hover {
+    background-color: #444444;
+  }
+  
+  .radio-group {
+    margin: 10px 0;
+  }
+  
+  .radio-group label {
+    margin-right: 15px;
+  }
+  
+  .reset-button {
+    background-color: #555555;
+    color: #ffffff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .reset-button:hover {
+    background-color: #444444;
+  }
+  
+  .mission-card {
+    background-color: #aee0f4;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .mission-card img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  
+  .mission-details {
+    flex-grow: 1;
+  }
+  
+  .mission-details h3 {
+    margin: 0;
+    font-size: 24px;
+    color: #000000;
+  }
+  
+  .mission-details p {
+    margin: 5px 0;
+    color: #000000;
+  }
+  
