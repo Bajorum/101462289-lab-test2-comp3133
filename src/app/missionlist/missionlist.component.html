@@ -1,34 +1,36 @@
 <div class="container">
-    <h2>🚀 SpaceX Launch Missions</h2>
+  <h2>🚀 SpaceX Launch Missions</h2>
 
-    <app-missionfilter (filtersChanged)="getMissions($event)"></app-missionfilter>
+  <!-- Only one filter component should exist -->
+  <app-missionfilter (filtersChanged)="getMissions($event)"></app-missionfilter>
 
-    <div *ngFor="let mission of missions" class="mission-card">
-      <img
-        *ngIf="mission.links.mission_patch_small"
-        [src]="mission.links.mission_patch_small"
-        alt="Mission Patch"
-      />
+  <div *ngFor="let mission of missions" class="mission-card">
+    <img
+      *ngIf="mission?.links?.mission_patch_small"
+      [src]="mission.links.mission_patch_small"
+      alt="Mission Patch"
+    />
 
-      <div class="mission-details">
-        <h3>{{ mission.mission_name }}</h3>
-        <p><strong>{{ mission.launch_year }}</strong></p>
-        <p>{{ mission.details || 'No details available' }}</p>
+    <div class="mission-details">
+      <h3>{{ mission?.mission_name }}</h3>
+      <p><strong>{{ mission?.launch_year }}</strong></p>
+      <p>{{ mission?.details || 'No details available' }}</p>
 
-        <p>
-          <strong>Rocket:</strong> {{ mission.rocket.rocket_name }} -
-          {{ mission.rocket.rocket_type }}
-        </p>
+      <p>
+        <strong>Rocket:</strong>
+        {{ mission?.rocket?.rocket_name }} -
+        {{ mission?.rocket?.rocket_type }}
+      </p>
 
-        <div class="links">
-          <a *ngIf="mission.links.article_link" [href]="mission.links.article_link" target="_blank">📰 Article</a>
-          |
-          <a *ngIf="mission.links.wikipedia" [href]="mission.links.wikipedia" target="_blank">📚 Wikipedia</a>
-          |
-          <a *ngIf="mission.links.video_link" [href]="mission.links.video_link" target="_blank">🎥 Video</a>
-        </div>
-
-        <a [routerLink]="['/mission', mission.flight_number]">🔗 View Details</a>
+      <div class="links">
+        <a *ngIf="mission?.links?.article_link" [href]="mission.links.article_link" target="_blank">📰 Article</a>
+        |
+        <a *ngIf="mission?.links?.wikipedia" [href]="mission.links.wikipedia" target="_blank">📚 Wikipedia</a>
+        |
+        <a *ngIf="mission?.links?.video_link" [href]="mission.links.video_link" target="_blank">🎥 Video</a>
       </div>
+
+      <a [routerLink]="['/mission', mission?.flight_number]">🔗 View Details</a>
     </div>
+  </div>
 </div>
